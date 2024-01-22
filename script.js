@@ -1,4 +1,35 @@
-let bill = 120
+function calculateAndDisplay(){
+    // get input values from html - forms //
+    let bill = parseFloat(document.getElementById('totalBill').value)
+    let numOfPpl = parseInt(document.getElementById('numOfPeople').value)
+    let serviceQuality = document.getElementById('serviceQuality').value
+
+    //Calculate tip, total bill, and amount per person using helper functions //
+    let tip = calculateTip(bill, serviceQuality)
+    let totalBill = calculateTotalBill(bill, tip)
+    let amtPerPrs = calculateAmtPerPrs(totalBill, numOfPpl)
+
+    //display the results in the html document //
+    document.getElementById('tipResult').innerText = 'Tip: $' + tip.toFixed(2)
+    document.getElementById('totalBillResult').innerText = 'Total Bill: $' + totalBill.toFixed(2)
+    document.getElementById('amtPerPrsResult').innerText = 'Amount Per Person: $' + amtPerPrs.toFixed(2)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* let bill = 120
 let numOfPpl = 5
 let serviceQuality = 'Great'
 
@@ -30,4 +61,4 @@ let amtPerPrs(totalBill, numOfPpl)
 
 console.log('Tip: $' = tip)
 console.log('Total Bill: $' + totalBill)
-console.log('Amount Per Person: $' + amtPerPrs)
+console.log('Amount Per Person: $' + amtPerPrs) */
